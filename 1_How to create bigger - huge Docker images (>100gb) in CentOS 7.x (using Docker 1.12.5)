@@ -22,4 +22,4 @@ so I learned that I had to expand the thin layer. Sadly, you have to wipe your D
 
 So here I provide the files and stuff I did in the end
 
-Please Note that I have changed my default Docker data dir to /data/docker-root from 
+Please Note that I have changed my default Docker data dir to /data/docker-root from /var/lib/docker because of free space issues
