@@ -1,0 +1,7 @@
+mkdir -p /etc/systemd/system/docker.service.d
+echo "[Service]
+ExecStart=
+ExecStart=/usr/bin/dockerd --storage-opt dm.basesize=200G -g /data/docker-root" > /etc/systemd/system/docker.service.d/docker.conf
+# reload 
+systemctl daemon-reload
+systemctl restart docker

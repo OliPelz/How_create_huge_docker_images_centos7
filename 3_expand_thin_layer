@@ -1,0 +1,9 @@
+# first wipe off your docker data dir - handle with care - i am not responsible for your data loss
+rm -rf /data/docker-root/*
+mkdir /data/docker-root/devicemapper/devicemapper -p
+dd if=/dev/zero of=/data/docker-root/devicemapper/devicemapper/data bs=1G count=0 seek=250
+systemctl start docker
+docker info | grep -i space
+# output should now be 200gb
+
+
