@@ -1,9 +1,12 @@
 # first wipe off your docker data dir - handle with care - i am not responsible for your data loss
+# please note: this is not the default docker data dir ;)
 rm -rf /data/docker-root/*
 mkdir /data/docker-root/devicemapper/devicemapper -p
+# create a new thin layer of 200GB which is double the size of default Docker installation on CentOS 7
 dd if=/dev/zero of=/data/docker-root/devicemapper/devicemapper/data bs=1G count=0 seek=200
+# this initalizes everything
 systemctl start docker
 docker info | grep -i space
-# output should now be 200gb
+# output should now be 200gb instead of 100gb
 
 
