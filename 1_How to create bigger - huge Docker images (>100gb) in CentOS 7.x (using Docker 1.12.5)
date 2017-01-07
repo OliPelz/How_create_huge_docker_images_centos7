@@ -1,9 +1,10 @@
-Standard Docker daemon on CentOS 7.x has two very annoying limitations when creating bigger images.
-The default base image is 10gb space and there is another barrier with the thin layer which is set to 100gb.
+The default Docker daemon on CentOS 7.x from the official package repository has two very annoying limitations when trying to create bigger images.
+
+First is the default base image is 10gb space and second there is another barrier with the thin layer which is set to 100gb.
 
 I needed a Docker image containing a big database which was about 120gb.
 
-When I COPY'ed the huge database in the Dockerfile and build the image, I got a 
+When I COPY'ed the huge database in the Dockerfile to build the image, I got a 
 
 No space left on device
 
